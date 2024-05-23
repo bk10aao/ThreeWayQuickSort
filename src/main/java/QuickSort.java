@@ -11,15 +11,11 @@ public class QuickSort {
     private static void sort(Comparable[] values, int low, int high) {
         if(high <= low)
             return;
-
         int leftPointer = low;
         int rightPointer = high;
-
-        Comparable value = values[low];
-
         int index = low;
         while (index <= rightPointer) {
-            int comparator = values[index].compareTo(value);
+            int comparator = values[index].compareTo(values[low]);
             if(comparator < 0) exchange(values, leftPointer++, index++);
             else if(comparator > 0) exchange(values, index, rightPointer--);
             else index++;
